@@ -55,8 +55,7 @@ obj/%.o: src/%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(INC) -c $^ -o $@
 	$(eval COMPILED=$(shell echo $$(($(COMPILED)+1))))
-	@printf "$(PERCENT) $(BLUE)Compiling: \
-	$(GREEN)%-29s $(CYAN)%-10s$(RESET).\n" "$^" ""
+	@printf "$(PERCENT) $(BLUE)Compiling: $(GREEN)%s$(RESET).\n" "$^"
 
 $(NAME): $(OBJS)
 	@printf "$(INSET)"
